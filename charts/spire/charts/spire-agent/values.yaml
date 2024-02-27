@@ -12,10 +12,10 @@ global: {}
 ## @param image.tag Overrides the image tag whose default is the chart appVersion
 ##
 image:
-  registry: ghcr.io
-  repository: spiffe/spire-agent
+  registry: us-central1-docker.pkg.dev/avid-equator-410718
+  repository: demo/spire-agent
   pullPolicy: IfNotPresent
-  tag: ""
+  tag: latest
 
 ## @param imagePullSecrets [array] Pull secrets for images
 imagePullSecrets: []
