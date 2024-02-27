@@ -1,3 +1,98 @@
 apiVersion: v1
-entries: {}
-generated: "2024-02-27T11:08:39.512938-06:00"
+entries:
+  spire:
+  - annotations:
+      artifacthub.io/category: security
+      artifacthub.io/license: Apache-2.0
+    apiVersion: v2
+    appVersion: 1.8.7
+    created: "2024-02-27T13:29:07.594019-06:00"
+    dependencies:
+    - condition: spire-server.enabled
+      name: spire-server
+      repository: file://./charts/spire-server
+      version: 0.1.0
+    - condition: spire-agent.enabled
+      name: spire-agent
+      repository: file://./charts/spire-agent
+      version: 0.1.0
+    - alias: upstream-spire-agent
+      condition: upstream.enabled
+      name: spire-agent
+      repository: file://./charts/spire-agent
+      version: 0.1.0
+    - condition: spiffe-csi-driver.enabled
+      name: spiffe-csi-driver
+      repository: file://./charts/spiffe-csi-driver
+      version: 0.1.0
+    - alias: upstream-spiffe-csi-driver
+      condition: upstream.enabled
+      name: spiffe-csi-driver
+      repository: file://./charts/spiffe-csi-driver
+      version: 0.1.0
+    - condition: spiffe-oidc-discovery-provider.enabled
+      name: spiffe-oidc-discovery-provider
+      repository: file://./charts/spiffe-oidc-discovery-provider
+      version: 0.1.0
+    - condition: tornjak-frontend.enabled
+      name: tornjak-frontend
+      repository: file://./charts/tornjak-frontend
+      version: 0.1.0
+    description: 'A Helm chart for deploying the complete Spire stack including: spire-server,
+      spire-agent, spiffe-csi-driver, spiffe-oidc-discovery-provider and spire-controller-manager. '
+    digest: c70ae866fa77306bf441a4defec3c254c1a7f672e5147cba46c2cd36581652d6
+    home: https://github.com/spiffe/helm-charts-hardened/tree/main/charts/spire
+    icon: https://spiffe.io/img/logos/spire/icon/color/spire-icon-color.png
+    keywords:
+    - spiffe
+    - spire
+    - spire-server
+    - spire-agent
+    - oidc
+    - spire-controller-manager
+    kubeVersion: '>=1.21.0-0'
+    maintainers:
+    - email: marco.franssen@gmail.com
+      name: marcofranssen
+      url: https://marcofranssen.nl
+    - email: Kevin.Fox@pnnl.gov
+      name: kfox1111
+    - email: fymemon@yahoo.com
+      name: faisal-memon
+    - email: edwbuck@gmail.com
+      name: edwbuck
+    name: spire
+    sources:
+    - https://github.com/spiffe/helm-charts-hardened/tree/main/charts/spire
+    type: application
+    urls:
+    - https://deeplineage.github.io/helm-charts-hardened/spire-0.17.2.tgz
+    version: 0.17.2
+  spire-crds:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2024-02-27T13:29:07.594374-06:00"
+    description: 'A Helm chart for deploying the Spire CRDS '
+    digest: 8df7dddc78ff66ec1ca26a21f7ed1b6c1f1214d175e5eec559e69f9a75dd9001
+    home: https://github.com/spiffe/helm-charts-hardened/tree/main/charts/spire
+    icon: https://spiffe.io/img/logos/spire/icon/color/spire-icon-color.png
+    keywords:
+    - spire-crds
+    maintainers:
+    - email: marco.franssen@gmail.com
+      name: marcofranssen
+      url: https://marcofranssen.nl
+    - email: Kevin.Fox@pnnl.gov
+      name: kfox1111
+    - email: fymemon@yahoo.com
+      name: faisal-memon
+    - email: edwbuck@gmail.com
+      name: edwbuck
+    name: spire-crds
+    sources:
+    - https://github.com/spiffe/helm-charts-hardened/tree/main/charts/spire
+    type: application
+    urls:
+    - https://deeplineage.github.io/helm-charts-hardened/spire-crds-0.3.0.tgz
+    version: 0.3.0
+generated: "2024-02-27T13:29:07.589022-06:00"
